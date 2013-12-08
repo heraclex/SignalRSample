@@ -1,0 +1,37 @@
+﻿@model SignalRDemo.ViewModel.LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<section id="loginForm">
+    <h2>Use a local account to log in.</h2>
+    @using (Html.BeginForm("Login", "Login"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Log in Form</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserAccount.UserName)
+                    @Html.TextBoxFor(m => m.UserAccount.UserName)
+                    @Html.ValidationMessageFor(m => m.UserAccount.UserName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.UserAccount.Password)
+                    @Html.PasswordFor(m => m.UserAccount.Password)
+                    @Html.ValidationMessageFor(m => m.UserAccount.Password)
+                </li>
+                <li>
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                </li>
+            </ol>
+            <input type="submit" value="Log in" />
+        </fieldset>
+    }
+</section>
+
+    @Scripts.Render("~/bundles/jqueryval")

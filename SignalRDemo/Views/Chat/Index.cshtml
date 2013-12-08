@@ -1,0 +1,12 @@
+﻿@model SignalRDemo.ViewModel.ChatViewModel
+
+@{
+    ViewBag.Title = "Chat Content";
+}
+
+@Html.TextAreaFor(m=>m.Message, new {id = "chat_message"})
+<input type="button" id="btn_sendMessage" name="btnSendMessage" value="Send">
+
+<div id="chatHistory"></div>
+
+@Scripts.Render("~/bundles/Chat")
