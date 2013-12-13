@@ -14,7 +14,7 @@ namespace SignalRDemo
             app.MapSignalR();
             //app.MapSignalR<DemoPersistentConnection>("/Connections/DemoPersistentConnection");
             //app.MapSignalR<AuthorizationPersistentConnection>("/Connections/AuthorizationPersistentConnection");
-
+            var a = 111; 
             app.Map("/EnableDetailedErrors", map =>
             {
                 var hubConfiguration = new HubConfiguration
